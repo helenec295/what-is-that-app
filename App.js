@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
+import DetectObject from './src';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView contentContainerStyle={styles.scrollViewContent}>
+      <View style={styles.container}>
+        <DetectObject />
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
+  },
+  scrollViewContent: {
+    flexGrow: 1, // Ensure that the content can scroll
   },
 });
