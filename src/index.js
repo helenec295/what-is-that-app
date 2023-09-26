@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import * as ImagePicker from 'expo-image-picker'
 import * as FileSystem from 'expo-file-system'
+import { GOOGLE_VISION_API_KEY } from 'dotenv-expo';
 
 const DetectObject = () => {
     const [ imageUri, setImageUri ] = useState(null);
@@ -36,7 +37,7 @@ const DetectObject = () => {
            }
 
            // google vision api
-           const apiKey = 'AIzaSyDScsmNvkbAMbmdsI_yoZWa7bZzP55Wzsk'
+           const apiKey = GOOGLE_VISION_API_KEY
            const apiURL = `https://vision.googleapis.com/v1/images:annotate?key=${apiKey}`
 
            // read image from local file system and convert to base64
