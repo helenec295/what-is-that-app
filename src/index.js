@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import * as ImagePicker from 'expo-image-picker'
 import * as FileSystem from 'expo-file-system'
-import { GOOGLE_VISION_API_KEY } from 'dotenv-expo';
+import { GOOGLE_VISION_API_KEY } from '@env';
+// import { GOOGLE_VISION_API_KEY } from 'react-native-dotenv';
 
 const DetectObject = () => {
     const [ imageUri, setImageUri ] = useState(null);
@@ -25,7 +26,7 @@ const DetectObject = () => {
 
             
         } catch (error) {
-            console.log('Error pick image: ', error)
+            console.log('Error picking image: ', error)
         }
     };
 
